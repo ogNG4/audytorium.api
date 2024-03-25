@@ -70,6 +70,8 @@ export class AuthService {
         const tokenPayload: Token = {
             id: user.id,
             email: user.email,
+            firstName: user.firstName,
+            lastName: user.lastName,
         };
         const accessToken = await this.jwtService.signAsync(tokenPayload, { expiresIn: '15m' });
 
